@@ -82,7 +82,7 @@ services:
       - INSECURE_COOKIE=true # Example assumes no https, do not use in production
     labels:
       - "traefik.http.middlewares.traefik-forward-auth.forwardauth.address=http://traefik-forward-auth:4181"
-      - "traefik.http.middlewares.traefik-forward-auth.forwardauth.authResponseHeaders=X-Forwarded-User"
+      - "traefik.http.middlewares.traefik-forward-auth.forwardauth.authResponseHeaders=X-Forwarded-User,X-Forwarded-Access-Token"
       - "traefik.http.services.traefik-forward-auth.loadbalancer.server.port=4181"
 
   whoami:
@@ -166,6 +166,7 @@ Application Options:
   --whitelist=                                          Only allow given email addresses, can be set multiple times [$WHITELIST]
   --port=                                               Port to listen on (default: 4181) [$PORT]
   --rule.<name>.<param>=                                Rule definitions, param can be: "action", "rule" or "provider"
+  --user-id-path=                                       Dot notation path of a UserID for use with whitelist and X-Forwarded-User [$USER_ID_PATH]. Defaults to "email"
 
 Google Provider:
   --providers.google.client-id=                         Client ID [$PROVIDERS_GOOGLE_CLIENT_ID]

@@ -7,3 +7,4 @@ spec:
     address: http://127.0.0.1:4181
     authResponseHeaders:
       - X-Forwarded-User
+      - X-Forwarded-Access-Token

@@ -80,6 +80,7 @@ spec:
     address: http://traefik-forward-auth:4181
     authResponseHeaders:
       - X-Forwarded-User
+      - X-Forwarded-Access-Token
 
 ---
 #

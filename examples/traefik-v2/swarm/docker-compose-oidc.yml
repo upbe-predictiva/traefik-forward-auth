@@ -29,6 +29,6 @@ services:
       - LOG_LEVEL=debug
     labels:
       - "traefik.http.middlewares.traefik-forward-auth.forwardauth.address=http://traefik-forward-auth:4181"
-      - "traefik.http.middlewares.traefik-forward-auth.forwardauth.authResponseHeaders=X-Forwarded-User"
+      - "traefik.http.middlewares.traefik-forward-auth.forwardauth.authResponseHeaders=X-Forwarded-User,X-Forwarded-Access-Token"
       - "traefik.http.services.traefik-forward-auth.loadbalancer.server.port=4181"
 
